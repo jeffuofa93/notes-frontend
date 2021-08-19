@@ -1,11 +1,16 @@
 import React from "react";
+import { Badge } from "@chakra-ui/react";
 
-const Notification = ({ message }) => {
+const Notification = ({ message, color }) => {
   if (message === null) {
     return null;
   }
 
-  return <div className="error">{message}</div>;
+  return (
+    <Badge colorScheme={color.toString()} p="4" m="4" borderRadius="lg">
+      {message}
+    </Badge>
+  );
 };
 
 export default Notification;
